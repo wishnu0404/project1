@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-28T00:09:55 IST" name="Default suite" finished-at="2025-07-28T00:10:04 IST" duration-ms="9899">
+    <groups>
+    </groups>
+    <test started-at="2025-07-28T00:09:55 IST" name="Default test" finished-at="2025-07-28T00:10:04 IST" duration-ms="9899">
+      <class name="testClasses.BookingttestClass">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testClasses.BookingttestClass@7c7a06ec]" started-at="2025-07-28T00:09:55 IST" name="beforeMethod" finished-at="2025-07-28T00:09:58 IST" duration-ms="3495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyThe_booking_Process()[pri:0, instance:testClasses.BookingttestClass@7c7a06ec]" started-at="2025-07-28T00:09:58 IST" name="verifyThe_booking_Process" finished-at="2025-07-28T00:10:04 IST" duration-ms="6339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThe_booking_Process -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testClasses.BookingttestClass@7c7a06ec]" started-at="2025-07-28T00:10:04 IST" name="afterMethod" finished-at="2025-07-28T00:10:04 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testClasses.BookingttestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
