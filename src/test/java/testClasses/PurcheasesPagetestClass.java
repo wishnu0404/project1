@@ -20,8 +20,10 @@ public class PurcheasesPagetestClass extends Baseclass {
 		hp.purcheasClicktheLinks();
 		pp= hp.purcheaslistClick();
 		pp.isItemPresent("ABC_Company");
-		Assert.assertTrue(true, "items not present");
-		
+		Assert.assertTrue(true, "item present");
+		// 
+		//
+		//
 	  
   }
 }

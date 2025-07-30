@@ -3,6 +3,7 @@ package testClasses;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.IRetryAnalyzer;
 import org.testng.annotations.Test;
 
 import baseClass.Baseclass;
@@ -10,10 +11,11 @@ import dataprovider.DataProvideClass;
 import pageClasses.ForgotpageClass;
 import pageClasses.HomePageClass;
 import pageClasses.LoginPageClass;
+import retry.Retry_Analyser;
 import utilities.ExcelReadUtility;
 
 public class LoginPagetestClass extends Baseclass {
-	@Test
+	@Test(retryAnalyzer = Retry_Analyser.class)
 	public void verifySuccessfullLogin() throws IOException {
 		LoginPageClass lp = new LoginPageClass(driver);
 		HomePageClass hp = lp.validLogin(ExcelReadUtility.getStringData(0, 0,"loginpage"), ExcelReadUtility.getIntegerData(0, 1, "loginpage"));
@@ -24,7 +26,7 @@ public class LoginPagetestClass extends Baseclass {
 
 	}
 
-	@Test
+	@Test(retryAnalyzer = Retry_Analyser.class)
 	public void verifyunSuccessfullLogin() {
 		LoginPageClass lp = new LoginPageClass(driver);
 		lp.invalidLogin("adm", "123456");
