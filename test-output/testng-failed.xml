@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testClasses.HomepagetestClass">
+      <class name="testClasses.PurcheasesPagetestClass">
         <methods>
-          <include name="verify_the_clacuator_addition"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
+          <include name="verifythementionedItemIsDeletedFromTHEtABLE"/>
         </methods>
-      </class> <!-- testClasses.HomepagetestClass -->
+      </class> <!-- testClasses.PurcheasesPagetestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

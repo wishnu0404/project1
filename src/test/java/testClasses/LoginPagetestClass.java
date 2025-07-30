@@ -1,18 +1,22 @@
 package testClasses;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import baseClass.Baseclass;
+import dataprovider.DataProvideClass;
 import pageClasses.ForgotpageClass;
 import pageClasses.HomePageClass;
 import pageClasses.LoginPageClass;
+import utilities.ExcelReadUtility;
 
 public class LoginPagetestClass extends Baseclass {
 	@Test
-	public void verifySuccessfullLogin() {
+	public void verifySuccessfullLogin() throws IOException {
 		LoginPageClass lp = new LoginPageClass(driver);
-		HomePageClass hp = lp.validLogin("admin", "123456");
+		HomePageClass hp = lp.validLogin(ExcelReadUtility.getStringData(0, 0,"loginpage"), ExcelReadUtility.getIntegerData(0, 1, "loginpage"));
 		hp.clickOnendTourButton();
 		String actuLRresult = hp.getTextofWelcomHeading();
 		String expectedresult = "Welcome admin";
@@ -29,6 +33,17 @@ public class LoginPagetestClass extends Baseclass {
 		Assert.assertTrue(actuLRresult.contains(expectedresult));
 
 	}
+	
+	@Test(dataProviderClass = DataProvideClass.class,dataProvider = "unsuccessfullLogin")
+	public void verifyInvalidlLogin(String uname, String pass) {
+		LoginPageClass lp = new LoginPageClass(driver);
+		lp.invalidLogin(uname,pass);
+		String actuLRresult = lp.gettextofInvalidErromeesag();
+		String expectedresult = "These credentials do not match our records";
+		Assert.assertTrue(actuLRresult.contains(expectedresult));
+
+	}
+
 
 	@Test
 	public void verfyUsernameTextboxshowinghintornot() {
@@ -57,7 +72,7 @@ public class LoginPagetestClass extends Baseclass {
 	}
 
 	@Test
-	public void resetPageIsDisplayedWhenClickingForgotPassword() {
+	public void verify_resetPageIsDisplayedWhenClickingForgotPassword() {
 		LoginPageClass lp = new LoginPageClass(driver);
 		ForgotpageClass fp = lp.clickOnForgotPassword();
 		String actualText = fp.getResetPasswordPageText();

@@ -78,6 +78,11 @@ public class HomePageClass {
 
 	@FindBy(css = "[class='fa fa-calendar-check-o']")
 	WebElement bookingbutton;
+	
+	@FindBy (xpath = "//a[@id='tour_step6_menu']/span[1]")
+	WebElement purcheaseslink;
+	@FindBy (xpath ="//li[@id='tour_step6']/ul/li[1]/a")
+	WebElement listofpurcheaseslink;
 
 	public void clickOnendTourButton() {
 		try {
@@ -191,4 +196,16 @@ public class HomePageClass {
 		return new BookingPageClass(driver);
 
 	}
+	
+	public void purcheasClicktheLinks() {
+		purcheaseslink.click();
+	}
+	
+	public PurcheasesPageClass purcheaslistClick() {
+		listofpurcheaseslink.click();
+		return new PurcheasesPageClass(driver);
+	}
+	
+	
+
 }
