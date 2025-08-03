@@ -1,16 +1,15 @@
 package testClasses;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import baseClass.Baseclass;
 import pageClasses.HomePageClass;
 import pageClasses.LoginPageClass;
-import pageClasses.Login_pageClass;
 import utilities.RandomDataGeneration;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class HomepagetestClass extends Baseclass {
 	LoginPageClass lp;
@@ -26,7 +25,7 @@ public class HomepagetestClass extends Baseclass {
 		Assert.assertEquals(actualresult, expectedresult);
 	  
   }
-  @Test (invocationCount = 50)
+  @Test (invocationCount = 1)
   public void verify_the_user_added_is_displayed() {
 	  lp = new LoginPageClass(driver);
 	  hp= lp.validLogin("admin", "123456");

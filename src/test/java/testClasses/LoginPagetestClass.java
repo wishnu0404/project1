@@ -15,7 +15,8 @@ import retry.Retry_Analyser;
 import utilities.ExcelReadUtility;
 
 public class LoginPagetestClass extends Baseclass {
-	@Test(retryAnalyzer = Retry_Analyser.class)
+	
+	@Test(retryAnalyzer = Retry_Analyser.class, groups = {"group1"})
 	public void verifySuccessfullLogin() throws IOException {
 		LoginPageClass lp = new LoginPageClass(driver);
 		HomePageClass hp = lp.validLogin(ExcelReadUtility.getStringData(0, 0,"loginpage"), ExcelReadUtility.getIntegerData(0, 1, "loginpage"));
@@ -26,7 +27,7 @@ public class LoginPagetestClass extends Baseclass {
 
 	}
 
-	@Test(retryAnalyzer = Retry_Analyser.class)
+	@Test(retryAnalyzer = Retry_Analyser.class, groups = {"group1"})
 	public void verifyunSuccessfullLogin() {
 		LoginPageClass lp = new LoginPageClass(driver);
 		lp.invalidLogin("adm", "123456");
@@ -36,7 +37,7 @@ public class LoginPagetestClass extends Baseclass {
 
 	}
 	
-	@Test(dataProviderClass = DataProvideClass.class,dataProvider = "unsuccessfullLogin")
+	@Test(dataProviderClass = DataProvideClass.class,dataProvider = "unsuccessfullLogin", groups = {"group2"})
 	public void verifyInvalidlLogin(String uname, String pass) {
 		LoginPageClass lp = new LoginPageClass(driver);
 		lp.invalidLogin(uname,pass);

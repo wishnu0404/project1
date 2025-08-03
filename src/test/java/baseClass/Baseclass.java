@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod; 
 
 public class Baseclass {
-	public WebDriver driver;
+	public static WebDriver driver;
 	public static Properties property;
 
 	public static void readProperty() throws IOException {
@@ -26,7 +26,7 @@ public class Baseclass {
 		property.load(file);
 	}
 
-	@BeforeMethod
+	@BeforeMethod (groups = {"tearup"})
 	public void beforeMethod() throws IOException {
 		readProperty();
 		driver = new ChromeDriver();
@@ -36,7 +36,7 @@ public class Baseclass {
 
 	}
 
-	@AfterMethod
+	@AfterMethod (groups = {"teardown"})
 	public void afterMethod() {
 	driver.quit();
 	}

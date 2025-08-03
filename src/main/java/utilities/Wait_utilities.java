@@ -18,6 +18,13 @@ public class Wait_utilities {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locatorValue)));
 	}
+	
+	public String waitForElementToBeClickableByXpathLocator_Utility1(WebDriver driver, String locatorValue, int timeOut) {
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locatorValue)));
+		return locatorValue;
+	}
 
 	public void waitfortheElementtoBeclickableByIDlocator(WebDriver driver, WebElement element, int timeout) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
@@ -62,5 +69,7 @@ public class Wait_utilities {
 		wait.until(ExpectedConditions.visibilityOfAllElements(elements));
 
 	}
+
+
 	
 }

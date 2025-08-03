@@ -1,5 +1,6 @@
 package testClasses;
 
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,11 +20,20 @@ public class PurcheasesPagetestClass extends Baseclass {
 		hp.clickOnendTourButton();
 		hp.purcheasClicktheLinks();
 		pp= hp.purcheaslistClick();
-		pp.isItemPresent("ABC_Company");
-		Assert.assertTrue(true, "item present");
-		// 
-		//
-		//
+	String searcheditem =	pp.seachFortheGiven("ABC_Company");
+		pp.isItemPresent(searcheditem);
+	//	Assert.assertTrue(true, "item present");
+		//pp.clickActionButtonForItem("ABC_Company");
+	//	pp.clickActionButtonForItem(searcheditem);
+		String paginationcount = pp.searchResultCount();
+		System.out.println("the result is " +paginationcount);
+		pp.clickOnActionButton();
+		pp.clickondletebutton();
+		pp.confirmDelete();
+		String afterdeleteionpaginationcount = pp.searchResultCount();
+
+	  Assert.assertNotSame(paginationcount, afterdeleteionpaginationcount);
+	  System.out.println("the item is dleted");
 	  
   }
 }
