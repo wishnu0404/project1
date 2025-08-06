@@ -31,6 +31,7 @@ public class Baseclass {
     
 	@BeforeMethod (groups = {"tearup"}) 
 	public void beforeMethod(String browserValue) throws IOException {
+
 		readProperty();
 		if (browserValue.equalsIgnoreCase("chrome"))
 		{

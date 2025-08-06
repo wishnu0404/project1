@@ -11,14 +11,8 @@
       <class name="testClasses.LoginPagetestClass">
         <methods>
           <include name="verifySuccessfullLogin"/>
-          <include name="verfyUsernameTextboxshowinghintornot"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="verifyCorrectApplicationisloadingwhileHitting_the_URL"/>
-          <include name="verify_the_Remebrmecheckboxischeckedby_Default"/>
-          <include name="verifyInvalidlLogin"/>
-          <include name="verify_resetPageIsDisplayedWhenClickingForgotPassword"/>
-          <include name="verifyunSuccessfullLogin"/>
         </methods>
       </class> <!-- testClasses.LoginPagetestClass -->
     </classes>
